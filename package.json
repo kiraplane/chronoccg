@@ -8,6 +8,7 @@
     "build": "opennextjs-cloudflare build",
     "next:build": "next build",
     "start": "next start",
+    "postinstall": "node scripts/cloudflare-postinstall-build.mjs",
     "lint": "biome check --write .",
     "format": "biome format --write .",
     "db:generate": "dotenv -e .env -- drizzle-kit generate",
