@@ -20,9 +20,9 @@ export const websiteConfig: WebsiteConfig = {
   },
   metadata: {
     images: {
-      ogImage: '/dragonfire/og-image.png',
-      logoLight: '/dragonfire/logo.png',
-      logoDark: '/dragonfire/logo.png',
+      ogImage: '/animesquadron/og-image.png',
+      logoLight: '/logo.png',
+      logoDark: '/logo.png',
     },
     social: {
       github: '',
@@ -75,9 +75,8 @@ export const websiteConfig: WebsiteConfig = {
   },
   mail: {
     provider: 'resend',
-    fromEmail:
-      'Game of Thrones Dragonfire Wiki <hello@gameofthronesdragonfire.wiki>',
-    supportEmail: 'hello@gameofthronesdragonfire.wiki',
+    fromEmail: 'Anime Squadron Wiki <hello@animesquadron.wiki>',
+    supportEmail: 'hello@animesquadron.wiki',
   },
   newsletter: {
     enable: false,

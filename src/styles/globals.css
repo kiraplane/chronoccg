@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Game of Thrones Dragonfire Wiki - dark, data-dense guide theme */
+/* Anime Squadron Wiki - dark, data-dense Roblox guide theme */
 
 :root {
   --font-noto-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -389,11 +389,11 @@ body {
 }
 
 /*
- * Game of Thrones Dragonfire theme colors
+ * Anime Squadron theme colors
  */
 .theme-default {
-  --primary: #c2410c;
-  --primary-foreground: #fff2e0;
+  --primary: #e03a22;
+  --primary-foreground: #fff5ea;
 }
 
 .theme-blue {

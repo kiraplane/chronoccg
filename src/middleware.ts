@@ -1,4 +1,3 @@
-import { betterFetch } from '@better-fetch/fetch';
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, NextResponse } from 'next/server';
 import {
@@ -7,22 +6,10 @@ import {
   LOCALE_COOKIE_NAME,
   routing,
 } from './i18n/routing';
-import type { Session } from './lib/auth-types';
-import { getBaseUrl } from './lib/urls/urls';
-import {
-  DEFAULT_LOGIN_REDIRECT,
-  protectedRoutes,
-  routesNotAllowedByLoggedInUsers,
-} from './routes';
 
 const intlMiddleware = createMiddleware(routing);
 const hasSingleLocale = LOCALES.length === 1;
 const defaultLocalePrefix = `/${DEFAULT_LOCALE}`;
-
-const authRelatedRoutes = [
-  ...protectedRoutes,
-  ...routesNotAllowedByLoggedInUsers,
-];
 
 const retiredPublicRouteRedirects: Array<{
   pattern: RegExp;
@@ -35,10 +22,15 @@ const retiredPublicRouteRedirects: Array<{
   { pattern: /^\/docs(?:\/.*)?$/, target: '/' },
   { pattern: /^\/about\/?$/, target: '/' },
   { pattern: /^\/contact\/?$/, target: '/' },
-  { pattern: /^\/heroes(?:\/.*)?$/, target: '/dragons' },
-  { pattern: /^\/units-database\/?$/, target: '/dragons' },
-  { pattern: /^\/traits-guide\/?$/, target: '/resources' },
-  { pattern: /^\/skills\/?$/, target: '/resources' },
+  { pattern: /^\/auth(?:\/.*)?$/, target: '/' },
+  { pattern: /^\/dashboard(?:\/.*)?$/, target: '/' },
+  { pattern: /^\/admin(?:\/.*)?$/, target: '/' },
+  { pattern: /^\/settings(?:\/.*)?$/, target: '/' },
+  { pattern: /^\/payment(?:\/.*)?$/, target: '/' },
+  { pattern: /^\/heroes(?:\/.*)?$/, target: '/units' },
+  { pattern: /^\/units-database\/?$/, target: '/units' },
+  { pattern: /^\/traits-guide\/?$/, target: '/traits' },
+  { pattern: /^\/skills\/?$/, target: '/traits' },
   { pattern: /^\/codes-list\/?$/, target: '/codes' },
 ];
 
@@ -48,10 +40,10 @@ export default async function middleware(req: NextRequest) {
   const hostname = hostHeader?.split(':')[0].toLowerCase();
   const forwardedProto = req.headers.get('x-forwarded-proto');
   const productionHosts = new Set([
-    'gameofthronesdragonfire.wiki',
-    'www.gameofthronesdragonfire.wiki',
+    'animesquadron.wiki',
+    'www.animesquadron.wiki',
   ]);
-  const canonicalHost = 'www.gameofthronesdragonfire.wiki';
+  const canonicalHost = 'www.animesquadron.wiki';
 
   if (
     hostname &&
@@ -111,69 +103,6 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(
       new URL(`${localizedTarget}${nextUrl.search}`, nextUrl),
       308
-    );
-  }
-
-  const needsAuthCheck = authRelatedRoutes.some((route) =>
-    new RegExp(`^${route}$`).test(pathnameWithoutLocale)
-  );
-
-  if (!needsAuthCheck) {
-    if (hasSingleLocale) {
-      if (isDefaultLocalePrefixedPath) {
-        return NextResponse.next();
-      }
-
-      const localizedPath =
-        nextUrl.pathname === '/'
-          ? defaultLocalePrefix
-          : `${defaultLocalePrefix}${nextUrl.pathname}`;
-      const localizedUrl = new URL(
-        `${localizedPath}${nextUrl.search}`,
-        nextUrl
-      );
-
-      return NextResponse.rewrite(localizedUrl);
-    }
-
-    return intlMiddleware(req);
-  }
-
-  let session: Session | null = null;
-  try {
-    const result = await betterFetch<Session>('/api/auth/get-session', {
-      baseURL: getBaseUrl(),
-      headers: {
-        cookie: req.headers.get('cookie') || '',
-      },
-    });
-    session = result.data;
-  } catch (error) {
-    session = null;
-  }
-  const isLoggedIn = !!session;
-
-  if (isLoggedIn) {
-    const isNotAllowedRoute = routesNotAllowedByLoggedInUsers.some((route) =>
-      new RegExp(`^${route}$`).test(pathnameWithoutLocale)
-    );
-    if (isNotAllowedRoute) {
-      return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
-    }
-  }
-
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    new RegExp(`^${route}$`).test(pathnameWithoutLocale)
-  );
-
-  if (!isLoggedIn && isProtectedRoute) {
-    let callbackUrl = nextUrl.pathname;
-    if (nextUrl.search) {
-      callbackUrl += nextUrl.search;
-    }
-    const encodedCallbackUrl = encodeURIComponent(callbackUrl);
-    return NextResponse.redirect(
-      new URL(`/auth/login?callbackUrl=${encodedCallbackUrl}`, nextUrl)
     );
   }
 

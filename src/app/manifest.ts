@@ -23,12 +23,12 @@ import type { MetadataRoute } from 'next';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: defaultMessages.Metadata.name,
-    short_name: 'Dragonfire Wiki',
+    short_name: 'AnimeSquad Wiki',
     description: defaultMessages.Metadata.description,
     start_url: '/',
     display: 'standalone',
-    background_color: '#070302',
-    theme_color: '#c2410c',
+    background_color: '#090706',
+    theme_color: '#e03a22',
     icons: [
       {
         src: '/favicon-32x32.png',

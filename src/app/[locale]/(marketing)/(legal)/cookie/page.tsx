@@ -10,9 +10,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'Cookie Policy | Game of Thrones Dragonfire Wiki',
+    title: 'Cookie Policy | Anime Squadron Wiki',
     description:
-      'How Game of Thrones Dragonfire Wiki uses essential cookies, analytics, and similar technologies.',
+      'How Anime Squadron Wiki uses essential cookies, analytics, and similar technologies.',
     locale,
     pathname: '/cookie',
   });
@@ -24,9 +24,9 @@ export default function CookiePolicyPage() {
       <Container className="max-w-3xl space-y-6 px-4">
         <h1 className="font-display text-4xl font-black">Cookie Policy</h1>
         <p className="leading-8 text-[#CBD5E1]">
-          Game of Thrones Dragonfire Wiki uses essential cookies and similar
-          technologies to keep the site working, remember basic preferences, and
-          understand aggregate traffic patterns.
+          Anime Squadron Wiki uses essential cookies and similar technologies to
+          keep the site working, remember basic preferences, and understand
+          aggregate traffic patterns.
         </p>
         <p className="leading-8 text-[#CBD5E1]">
           Analytics or advertising partners may set limited cookies to measure
@@ -40,8 +40,7 @@ export default function CookiePolicyPage() {
           work as expected when cookies are disabled.
         </p>
         <p className="leading-8 text-[#CBD5E1]">
-          Questions about this policy can be sent to
-          hello@gameofthronesdragonfire.wiki.
+          Questions about this policy can be sent to hello@animesquadron.wiki.
         </p>
       </Container>
     </div>

@@ -4,13 +4,14 @@ import { Routes } from '@/routes';
 import type { NestedMenuItem } from '@/types';
 import {
   BookOpen,
-  Castle,
   ClipboardList,
   Download,
-  Flame,
+  Gamepad2,
+  RadioTower,
+  RotateCcw,
   Sparkles,
+  Swords,
   Trophy,
-  Users,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -31,22 +32,22 @@ export function useNavbarLinks(): NestedMenuItem[] {
       icon: <Trophy className="size-4" />,
     },
     {
-      title: t('dragons.title'),
-      href: Routes.Dragons,
+      title: t('units.title'),
+      href: Routes.Units,
       external: false,
-      icon: <Flame className="size-4" />,
+      icon: <Swords className="size-4" />,
     },
     {
-      title: t('resources.title'),
-      href: Routes.Resources,
-      external: false,
-      icon: <Castle className="size-4" />,
-    },
-    {
-      title: t('campaigns.title'),
-      href: Routes.Campaigns,
+      title: t('traits.title'),
+      href: Routes.Traits,
       external: false,
       icon: <Sparkles className="size-4" />,
+    },
+    {
+      title: t('reroll.title'),
+      href: Routes.Reroll,
+      external: false,
+      icon: <RotateCcw className="size-4" />,
     },
     {
       title: t('guides.title'),
@@ -55,10 +56,16 @@ export function useNavbarLinks(): NestedMenuItem[] {
       icon: <BookOpen className="size-4" />,
     },
     {
-      title: t('alliances.title'),
-      href: Routes.Alliances,
+      title: t('gameModes.title'),
+      href: Routes.GameModes,
       external: false,
-      icon: <Users className="size-4" />,
+      icon: <Gamepad2 className="size-4" />,
+    },
+    {
+      title: t('discord.title'),
+      href: Routes.Discord,
+      external: false,
+      icon: <RadioTower className="size-4" />,
     },
     {
       title: t('download.title'),

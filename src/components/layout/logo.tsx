@@ -24,13 +24,13 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Image
       src={logo}
-      alt="Game of Thrones Dragonfire Wiki logo"
-      title="Game of Thrones Dragonfire Wiki"
+      alt="Anime Squadron Wiki logo"
+      title="Anime Squadron Wiki"
       width={96}
       height={96}
       priority
       className={cn(
-        'size-14 rounded-full bg-[#070302] object-contain ring-1 ring-[#7C2D12]/70',
+        'size-14 rounded-full bg-[#090706] object-contain ring-1 ring-[#37D6D0]/55',
         className
       )}
     />

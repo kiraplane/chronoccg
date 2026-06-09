@@ -1,4 +1,4 @@
-import { DragonfireHomePage } from '@/components/dragonfire/home-page';
+import { AnimeSquadronHomePage } from '@/components/animesquadron/home-page';
 import { constructMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
@@ -11,15 +11,15 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return constructMetadata({
-    title: 'Game of Thrones Dragonfire Wiki - Codes, Tier List & Guides',
+    title: 'Anime Squadron Wiki - Codes, Tier List & Guides',
     description:
-      'Game of Thrones Dragonfire Wiki with codes, tier list rankings, dragon profiles, campaign reset help, resources, alliances, Reigns, and beginner guides.',
+      'Anime Squadron Wiki with active codes, unit-role tier list, traits, stat rerolls, game modes, Discord links, safe Roblox download notes, and beginner guides.',
     locale,
     pathname: '',
-    image: '/dragonfire/og-image.png',
+    image: '/animesquadron/og-image.png',
   });
 }
 
 export default function HomePage() {
-  return <DragonfireHomePage />;
+  return <AnimeSquadronHomePage />;
 }

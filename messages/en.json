@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "Game of Thrones Dragonfire Wiki",
-    "title": "Game of Thrones Dragonfire Wiki - Codes, Tier List and Guides",
-    "description": "Game of Thrones Dragonfire Wiki for codes, dragon tier lists, campaign reset help, resources, alliances, Reigns, and beginner guides."
+    "name": "Anime Squadron Wiki",
+    "title": "Anime Squadron Wiki - Codes, Tier List and Guides",
+    "description": "Anime Squadron Wiki for codes, unit tier lists, traits, stat rerolls, game modes, Discord links, and beginner guides."
   },
   "Common": {
     "premium": "Premium",
@@ -54,8 +54,8 @@
   },
   "PricingPage": {
     "title": "Pricing",
-    "description": "Optional supporter plans for keeping Game of Thrones Dragonfire Wiki maintained",
-    "subtitle": "Simple support options for readers who want to help maintain guides and data updates",
+    "description": "Optional supporter plans for keeping Anime Squadron Wiki maintained",
+    "subtitle": "Simple support options for readers who want to help maintain source-checked guides and data updates",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "payAsYouGo": "Pay as you go",
@@ -80,11 +80,11 @@
   "PricePlans": {
     "free": {
       "name": "Free",
-      "description": "Browse Game of Thrones Dragonfire Wiki with no payment required",
+      "description": "Browse Anime Squadron Wiki with no payment required",
       "features": {
-        "feature-1": "Dragonfire code status and redemption notes",
-        "feature-2": "Dragon tier list and upgrade priority guidance",
-        "feature-3": "Guides for campaigns, resources, alliances, and Reigns",
+        "feature-1": "Anime Squadron code status and redemption notes",
+        "feature-2": "Unit-role tier list and upgrade priority guidance",
+        "feature-3": "Guides for traits, rerolls, game modes, Discord links, and beginner progression",
         "feature-4": "Core pages updated as game information changes"
       },
       "limits": {
@@ -99,11 +99,11 @@
       "description": "For readers who want to support ongoing guide updates",
       "features": {
         "feature-1": "Support site maintenance",
-        "feature-2": "Help fund future Dragonfire data checks",
-        "feature-3": "Keep gift code and guide pages fresh",
+        "feature-2": "Help fund future Anime Squadron data checks",
+        "feature-3": "Keep code and guide pages fresh",
         "feature-4": "Support cleaner walkthrough coverage",
         "feature-5": "Help improve page speed and hosting stability",
-        "feature-6": "Support future tool experiments",
+        "feature-6": "Support future wiki improvements",
         "feature-7": "No gameplay advantage is sold",
         "feature-8": "No official affiliation claimed",
         "feature-9": "Reader-first site improvements",
@@ -113,14 +113,14 @@
     },
     "max": {
       "name": "Backer",
-      "description": "For heavier support of Game of Thrones Dragonfire Wiki maintenance",
+      "description": "For heavier support of Anime Squadron Wiki maintenance",
       "features": {
         "feature-1": "Support expanded guide coverage",
         "feature-2": "Help fund more frequent source reviews",
         "feature-3": "Support long-form strategy pages",
         "feature-4": "Keep hosting and tooling stable",
         "feature-5": "Back future wiki improvements",
-        "feature-6": "Useful for teams maintaining community resources",
+        "feature-6": "Useful for teams maintaining community rewards",
         "feature-7": "No gameplay advantage is sold",
         "feature-8": "No official affiliation claimed",
         "feature-9": "Best fit for strong supporters",
@@ -177,7 +177,7 @@
     },
     "premium": {
       "name": "Premium",
-      "description": "For heavy usage, launches, and multi-asset campaigns",
+      "description": "For heavy usage, launches, and multi-asset game modes",
       "features": {
         "feature-1": "1,500 credits",
         "feature-2": "High-volume image generation",
@@ -296,45 +296,48 @@
       "tierList": {
         "title": "Tier List"
       },
-      "dragons": {
-        "title": "Dragons"
-      },
-      "resources": {
-        "title": "Resources"
-      },
-      "campaigns": {
-        "title": "Campaigns"
-      },
       "guides": {
         "title": "Guides"
       },
-      "alliances": {
-        "title": "Alliances"
-      },
       "download": {
         "title": "Download"
+      },
+      "units": {
+        "title": "Units"
+      },
+      "traits": {
+        "title": "Traits"
+      },
+      "reroll": {
+        "title": "Reroll"
+      },
+      "gameModes": {
+        "title": "Modes"
+      },
+      "discord": {
+        "title": "Discord"
       }
     },
     "footer": {
-      "tagline": "An unofficial Game of Thrones Dragonfire Wiki for codes, dragon tiers, campaigns, resources, alliances, Reigns, and beginner progression.",
+      "tagline": "An unofficial Anime Squadron Wiki for codes, unit tier lists, traits, rerolls, game modes, Discord links, and beginner progression.",
       "wiki": {
         "title": "Wiki",
         "items": {
           "codes": "Codes",
           "tierList": "Tier List",
-          "dragons": "Dragons",
-          "resources": "Resources",
-          "campaigns": "Campaigns"
+          "units": "Units",
+          "traits": "Traits",
+          "gameModes": "Game Modes"
         }
       },
       "guides": {
         "title": "Guides",
         "items": {
-          "all": "All guides",
+          "all": "All Guides",
           "beginner": "Beginner Guide",
-          "tierList": "Tier List Guide",
-          "resources": "Resource Guide",
-          "alliances": "Alliance Guide"
+          "units": "Units Guide",
+          "traits": "Traits Guide",
+          "reroll": "Reroll Guide"
         }
       },
       "legal": {

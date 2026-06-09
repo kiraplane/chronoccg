@@ -10,9 +10,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'Terms of Service | Game of Thrones Dragonfire Wiki',
+    title: 'Terms of Service | Anime Squadron Wiki',
     description:
-      'Terms for using the unofficial Game of Thrones Dragonfire Wiki and guide site.',
+      'Terms for using the unofficial Anime Squadron Wiki and guide site.',
     locale,
     pathname: '/terms',
   });
@@ -24,10 +24,10 @@ export default function TermsOfServicePage() {
       <Container className="max-w-3xl space-y-6 px-4">
         <h1 className="font-display text-4xl font-black">Terms of Service</h1>
         <p className="leading-8 text-[#CBD5E1]">
-          This site provides unofficial Game of Thrones Dragonfire guides, data
-          notes, and strategy content. It is not affiliated with, endorsed by,
-          sponsored by, or operated by Warner Bros. Games, HBO, Warner Bros.
-          Discovery, or the official Game of Thrones: Dragonfire team.
+          This site provides unofficial Anime Squadron guides, data notes, and
+          strategy content. It is not affiliated with, endorsed by, sponsored
+          by, or operated by Warner Bros. Games, HBO, Warner Bros. Roblox,
+          Komplex Studio, or the official Anime Squadron team.
         </p>
         <p className="leading-8 text-[#CBD5E1]">
           Game data can change quickly. Codes, rankings, dragon profiles,
@@ -40,8 +40,7 @@ export default function TermsOfServicePage() {
           platform terms.
         </p>
         <p className="leading-8 text-[#CBD5E1]">
-          Questions about these terms can be sent to
-          hello@gameofthronesdragonfire.wiki.
+          Questions about these terms can be sent to hello@animesquadron.wiki.
         </p>
       </Container>
     </div>

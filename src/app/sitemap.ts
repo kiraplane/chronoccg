@@ -1,5 +1,4 @@
-import { dragons } from '@/data/dragonfire/dragons';
-import { guides } from '@/data/dragonfire/guides';
+import { guides } from '@/data/animesquadron/guides';
 import { Routes } from '@/routes';
 import type { MetadataRoute } from 'next';
 import { routing } from '../i18n/routing';
@@ -9,14 +8,11 @@ const coreRoutes = [
   Routes.Root,
   Routes.Codes,
   Routes.TierList,
-  Routes.Dragons,
-  Routes.Resources,
-  Routes.Campaigns,
-  Routes.CampaignResetGuide,
-  Routes.Reigns,
-  Routes.Alliances,
-  Routes.Factions,
-  Routes.Stronghold,
+  Routes.Units,
+  Routes.Traits,
+  Routes.Reroll,
+  Routes.GameModes,
+  Routes.Discord,
   Routes.Guides,
   Routes.Updates,
   Routes.Download,
@@ -27,15 +23,14 @@ const coreRoutes = [
 ];
 
 const guideRoutes = guides.map((guide) => `/guides/${guide.slug}`);
-const dragonRoutes = dragons.map((dragon) => `/dragons/${dragon.slug}`);
-const stableLastModified = new Date('2026-06-05T00:00:00.000Z');
+const stableLastModified = new Date('2026-06-09T00:00:00.000Z');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const sitemapList: MetadataRoute.Sitemap = [];
   const baseUrl = getCanonicalBaseUrl();
 
   routing.locales.forEach((locale) => {
-    [...coreRoutes, ...guideRoutes, ...dragonRoutes].forEach((route) => {
+    [...coreRoutes, ...guideRoutes].forEach((route) => {
       const localizedRoute =
         locale === routing.defaultLocale ? route : `/${locale}${route}`;
 
@@ -51,7 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 route === Routes.Download ||
                 route === Routes.TierList
               ? 0.9
-              : route.startsWith('/guides/') || route.startsWith('/dragons/')
+              : route.startsWith('/guides/')
                 ? 0.85
                 : 0.8,
       });
