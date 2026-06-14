@@ -116,6 +116,9 @@ export default function UnitsPage() {
             </LocaleLink>
           </Button>
           <Button asChild variant="outline">
+            <LocaleLink href="/codes">Redeem codes first</LocaleLink>
+          </Button>
+          <Button asChild variant="outline">
             <LocaleLink href="/guides/secret-units-guide">
               Secret units guide
             </LocaleLink>

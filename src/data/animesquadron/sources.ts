@@ -1,6 +1,6 @@
 import type { DataSource } from './types';
 
-export const CHECKED_AT = '2026-06-09';
+export const CHECKED_AT = '2026-06-15';
 
 export const sources = {
   robloxGame: {
@@ -25,7 +25,7 @@ export const sources = {
     url: 'https://beebom.com/anime-squadron-codes/',
     checkedAt: CHECKED_AT,
     confidence: 'medium',
-    note: 'Updated June 9, 2026. Used as a code and redeem-flow cross-check, not copied as article prose.',
+    note: 'Rechecked June 15, 2026. Used as a code and redeem-flow cross-check, not copied as article prose.',
   },
   destructoidCodes: {
     type: 'guide_site',
@@ -33,7 +33,7 @@ export const sources = {
     url: 'https://www.destructoid.com/anime-squadron-codes/',
     checkedAt: CHECKED_AT,
     confidence: 'medium',
-    note: 'Published June 8, 2026. Used for early demand, code overlap, and community-link caution.',
+    note: 'Rechecked June 15, 2026. Used for active-code overlap, inactive-code checks, and community-link caution.',
   },
   proGameGuidesCodes: {
     type: 'guide_site',
@@ -41,7 +41,7 @@ export const sources = {
     url: 'https://progameguides.com/roblox/anime-squadron-codes/',
     checkedAt: CHECKED_AT,
     confidence: 'medium',
-    note: 'Updated June 8, 2026. Used for code overlap and launch-stage search demand.',
+    note: 'Rechecked June 15, 2026. Used for active-code overlap, inactive-code checks, and launch-stage search demand.',
   },
   rolimonsGroup: {
     type: 'community',

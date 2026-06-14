@@ -17,7 +17,24 @@ const tierOrder: PriorityTier[] = [
   'Data Pending',
 ];
 
-export function TierListTable() {
+const defaultLabels = {
+  rolesSuffix: 'roles',
+  tableIntro:
+    'Early-access ranking by the job each unit type solves: wave-clear carry, boss damage, control, economy, support, or starter filler.',
+  role: 'Role',
+  bestFor: 'Best for',
+  decision: 'Decision',
+  confidence: 'Confidence',
+  early: 'early',
+  rerollCost: 'reroll cost',
+  avoid: 'Avoid',
+};
+
+export function TierListTable({
+  labels = defaultLabels,
+}: {
+  labels?: typeof defaultLabels;
+}) {
   return (
     <div className="space-y-5">
       {tierOrder.map((tier) => {
@@ -36,13 +53,11 @@ export function TierListTable() {
               <div>
                 <TierBadge tier={tier} />
                 <h2 className="mt-3 font-display text-2xl font-bold text-[#FFF5EA]">
-                  {tier} roles
+                  {tier} {labels.rolesSuffix}
                 </h2>
               </div>
               <p className="max-w-2xl text-sm leading-6 text-[#D5C6B7]">
-                Early-access ranking by the job each unit type solves:
-                wave-clear carry, boss damage, control, economy, support, or
-                starter filler.
+                {labels.tableIntro}
               </p>
             </div>
 
@@ -50,16 +65,16 @@ export function TierListTable() {
               <TableHeader className="bg-[#090706]">
                 <TableRow className="border-[#3A2A24]">
                   <TableHead className="min-w-[190px] px-5 text-[#37D6D0]">
-                    Role
+                    {labels.role}
                   </TableHead>
                   <TableHead className="min-w-[240px] px-5 text-[#37D6D0]">
-                    Best for
+                    {labels.bestFor}
                   </TableHead>
                   <TableHead className="min-w-[340px] px-5 text-[#37D6D0]">
-                    Decision
+                    {labels.decision}
                   </TableHead>
                   <TableHead className="min-w-[170px] px-5 text-[#37D6D0]">
-                    Confidence
+                    {labels.confidence}
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -75,13 +90,13 @@ export function TierListTable() {
                       </div>
                       <div className="mt-2 flex flex-wrap gap-2">
                         <Badge className="bg-[#E03A22] text-[#FFF5EA]">
-                          {entry.earlyValue} early
+                          {entry.earlyValue} {labels.early}
                         </Badge>
                         <Badge
                           variant="outline"
                           className="border-[#574033] text-[#FFF5EA]"
                         >
-                          {entry.rerollCost} reroll cost
+                          {entry.rerollCost} {labels.rerollCost}
                         </Badge>
                       </div>
                     </TableCell>
@@ -101,7 +116,7 @@ export function TierListTable() {
                     <TableCell className="whitespace-normal px-5 leading-6 text-[#D5C6B7]">
                       <p>{entry.decision}</p>
                       <p className="mt-2 text-xs text-[#F3B23A]">
-                        Avoid: {entry.avoid}
+                        {labels.avoid}: {entry.avoid}
                       </p>
                     </TableCell>
                     <TableCell className="px-5">

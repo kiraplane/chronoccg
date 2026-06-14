@@ -1,5 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, NextResponse } from 'next/server';
+import { localizedCoreRoutes } from './data/animesquadron/localized-routes';
 import {
   DEFAULT_LOCALE,
   LOCALES,
@@ -32,6 +33,12 @@ const retiredPublicRouteRedirects: Array<{
   { pattern: /^\/traits-guide\/?$/, target: '/traits' },
   { pattern: /^\/skills\/?$/, target: '/traits' },
   { pattern: /^\/codes-list\/?$/, target: '/codes' },
+  { pattern: /^\/anime-squadron-codes\/?$/, target: '/codes' },
+  { pattern: /^\/anime-squadron-code\/?$/, target: '/codes' },
+  { pattern: /^\/tierlist\/?$/, target: '/tier-list' },
+  { pattern: /^\/anime-squadron-tier-list\/?$/, target: '/tier-list' },
+  { pattern: /^\/discord-server\/?$/, target: '/discord' },
+  { pattern: /^\/anime-squadron-discord\/?$/, target: '/discord' },
 ];
 
 export default async function middleware(req: NextRequest) {
@@ -106,6 +113,21 @@ export default async function middleware(req: NextRequest) {
     );
   }
 
+  const locale = getLocaleFromPathname(nextUrl.pathname, LOCALES);
+  const normalizedLocalizedPath =
+    normalizedPathnameWithoutLocale.replace(/\/$/, '') || '/';
+
+  if (
+    locale &&
+    locale !== DEFAULT_LOCALE &&
+    !localizedCoreRoutes.includes(normalizedLocalizedPath)
+  ) {
+    return NextResponse.redirect(
+      new URL(`${normalizedLocalizedPath}${nextUrl.search}`, nextUrl),
+      308
+    );
+  }
+
   if (hasSingleLocale) {
     if (isDefaultLocalePrefixedPath) {
       return NextResponse.next();
@@ -124,7 +146,7 @@ export default async function middleware(req: NextRequest) {
 }
 
 function getPathnameWithoutLocale(pathname: string, locales: string[]): string {
-  const localePattern = new RegExp(`^/(${locales.join('|')})/`);
+  const localePattern = new RegExp(`^/(${locales.join('|')})(?:/|$)`);
   return pathname.replace(localePattern, '/');
 }
 

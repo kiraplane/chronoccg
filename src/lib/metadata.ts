@@ -1,4 +1,5 @@
 import { websiteConfig } from '@/config/website';
+import { isLocalizedCoreRoute } from '@/data/animesquadron/localized-routes';
 import { defaultMessages } from '@/i18n/messages';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
@@ -40,7 +41,7 @@ export function constructMetadata({
 
   // Generate hreflang alternates if pathname is provided and we have multiple locales
   const alternates =
-    pathname && routing.locales.length > 1
+    pathname && routing.locales.length > 1 && isLocalizedCoreRoute(pathname)
       ? {
           canonical: canonicalUrl,
           ...generateAlternates(pathname),

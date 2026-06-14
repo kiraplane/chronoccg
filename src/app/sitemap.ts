@@ -1,4 +1,5 @@
 import { guides } from '@/data/animesquadron/guides';
+import { localizedCoreRoutes } from '@/data/animesquadron/localized-routes';
 import { Routes } from '@/routes';
 import type { MetadataRoute } from 'next';
 import { routing } from '../i18n/routing';
@@ -30,7 +31,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getCanonicalBaseUrl();
 
   routing.locales.forEach((locale) => {
-    [...coreRoutes, ...guideRoutes].forEach((route) => {
+    const routes =
+      locale === routing.defaultLocale
+        ? [...coreRoutes, ...guideRoutes]
+        : localizedCoreRoutes;
+
+    routes.forEach((route) => {
       const localizedRoute =
         locale === routing.defaultLocale ? route : `/${locale}${route}`;
 

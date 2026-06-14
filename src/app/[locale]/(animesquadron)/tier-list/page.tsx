@@ -5,34 +5,12 @@ import Container from '@/components/layout/container';
 import { JsonLd } from '@/components/seo/json-ld';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { getAnimeSquadronCopy } from '@/data/animesquadron/localized-copy';
 import { unitRoleRankings } from '@/data/animesquadron/tier-list';
 import { LocaleLink } from '@/i18n/navigation';
 import { constructMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
-
-const faqs = [
-  {
-    question: 'What is the best Anime Squadron unit?',
-    answer:
-      'Early data is still forming, so the safest answer is the unit that acts as your main carry and clears the next wave or boss wall.',
-  },
-  {
-    question: 'Should I follow a name-only Anime Squadron tier list?',
-    answer:
-      'Use name rankings only after checking the role. A unit is worth building when it solves your current wave, boss, farm, or support problem.',
-  },
-  {
-    question: 'Why does this tier list rank roles?',
-    answer:
-      'Role rankings avoid inventing unit-name data while Anime Squadron is still in early access. They still tell you where to spend first.',
-  },
-  {
-    question: 'Should I reroll a support unit first?',
-    answer:
-      'Usually no. Build a carry first, then invest in support once you know exactly which clear it improves.',
-  },
-];
 
 export async function generateMetadata({
   params,
@@ -40,17 +18,23 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const copy = getAnimeSquadronCopy(locale);
   return constructMetadata({
-    title: 'Anime Squadron Tier List - Best Units and Role Priority',
-    description:
-      'Early Anime Squadron tier list for main carry, boss damage, control, economy, support, and starter filler roles, with reroll and spending advice.',
+    title: copy.tierList.metadataTitle,
+    description: copy.tierList.metadataDescription,
     locale,
     pathname: '/tier-list',
     image: '/animesquadron/og-image.png',
   });
 }
 
-export default function TierListPage() {
+export default async function TierListPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const copy = getAnimeSquadronCopy(locale);
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -67,14 +51,14 @@ export default function TierListPage() {
       <JsonLd data={itemList} />
       <Container className="space-y-8 px-4">
         <header className="max-w-3xl space-y-4">
-          <Badge className="bg-[#37D6D0] text-[#041414]">Tier List</Badge>
+          <Badge className="bg-[#37D6D0] text-[#041414]">
+            {copy.tierList.badge}
+          </Badge>
           <h1 className="font-display text-4xl font-black md:text-6xl">
-            Anime Squadron Tier List
+            {copy.tierList.h1}
           </h1>
           <p className="text-lg leading-8 text-[#D5C6B7]">
-            A launch-stage priority list for the unit jobs that matter most: one
-            carry first, then boss damage, control, economy, or support when the
-            mode asks for it.
+            {copy.tierList.intro}
           </p>
         </header>
 
@@ -85,79 +69,65 @@ export default function TierListPage() {
         />
 
         <section className="rounded-lg border border-[#3A2A24] bg-[#130D0B] p-6">
-          <h2 className="font-display text-2xl font-bold">Ranking rules</h2>
+          <h2 className="font-display text-2xl font-bold">
+            {copy.tierList.rankingHeading}
+          </h2>
           <div className="mt-4 grid gap-4 text-sm leading-7 text-[#D5C6B7] md:grid-cols-3">
-            <p>
-              <strong className="text-[#FFF5EA]">Early value:</strong> whether
-              the role helps your first serious wave and boss clears.
-            </p>
-            <p>
-              <strong className="text-[#FFF5EA]">Reroll cost:</strong> whether
-              the role deserves scarce reroll materials now or later.
-            </p>
-            <p>
-              <strong className="text-[#FFF5EA]">Confidence:</strong> whether
-              the recommendation is official, cross-checked, or still pending
-              launch data.
-            </p>
+            {copy.tierList.rankingPoints.map((point) => (
+              <p key={point.label}>
+                <strong className="text-[#FFF5EA]">{point.label}</strong>{' '}
+                {point.body}
+              </p>
+            ))}
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button
               asChild
               className="bg-[#E03A22] text-[#FFF5EA] hover:bg-[#FF5538]"
             >
-              <LocaleLink href="/units">Open units guide</LocaleLink>
+              <LocaleLink href="/units">{copy.tierList.unitsButton}</LocaleLink>
             </Button>
             <Button asChild variant="outline">
-              <LocaleLink href="/traits">Plan traits</LocaleLink>
+              <LocaleLink href="/traits">
+                {copy.tierList.traitsButton}
+              </LocaleLink>
             </Button>
           </div>
         </section>
 
         <section className="rounded-lg border border-[#3A2A24] bg-[#130D0B] p-6">
           <h2 className="font-display text-2xl font-bold">
-            Current build route
+            {copy.tierList.routeHeading}
           </h2>
           <div className="mt-4 grid gap-4 text-sm leading-7 text-[#D5C6B7] md:grid-cols-3">
-            <p>
-              <strong className="text-[#FFF5EA]">Start with one carry.</strong>{' '}
-              Your first real unit investment should clear waves or bosses
-              better than the rest of the account.
-            </p>
-            <p>
-              <strong className="text-[#FFF5EA]">Delay luxury rerolls.</strong>{' '}
-              Perfect Cubes, Trait Shards, and Reroll Cubes are strongest after
-              a keeper unit is obvious.
-            </p>
-            <p>
-              <strong className="text-[#FFF5EA]">
-                Patch the visible wall.
-              </strong>{' '}
-              Add boss damage, control, support, or economy only when that role
-              fixes the run you are losing.
-            </p>
+            {copy.tierList.routePoints.map((point) => (
+              <p key={point.label}>
+                <strong className="text-[#FFF5EA]">{point.label}</strong>{' '}
+                {point.body}
+              </p>
+            ))}
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button asChild variant="outline">
               <LocaleLink href="/guides/best-units-tier-list">
-                Read best units guide
+                {copy.tierList.bestUnitsButton}
               </LocaleLink>
             </Button>
             <Button asChild variant="outline">
               <LocaleLink href="/guides/secret-units-guide">
-                Secret units guide
+                {copy.tierList.secretUnitsButton}
               </LocaleLink>
             </Button>
             <Button asChild variant="outline">
-              <LocaleLink href="/codes">Redeem codes first</LocaleLink>
+              <LocaleLink href="/codes">{copy.tierList.codesButton}</LocaleLink>
             </Button>
           </div>
         </section>
 
-        <TierListTable />
+        <TierListTable labels={copy.tierList.tierLabels} />
         <AdsterraAdFrame slot="banner-300x250" label />
 
-        <FaqSection items={faqs} />
+        <FaqSection items={copy.tierList.faqs} />
       </Container>
     </div>
   );

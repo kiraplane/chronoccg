@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { codeCheckSummary } from '@/data/animesquadron/codes';
 import { guides, siteDescription } from '@/data/animesquadron/guides';
+import { getAnimeSquadronCopy } from '@/data/animesquadron/localized-copy';
 import { officialGameFacts } from '@/data/animesquadron/sources';
 import { unitRoleRankings } from '@/data/animesquadron/tier-list';
 import { LocaleLink } from '@/i18n/navigation';
@@ -28,107 +29,8 @@ import Image from 'next/image';
 import { LastUpdated } from './last-updated';
 import { TierBadge } from './status-badge';
 
-const primaryLinks = [
-  {
-    title: 'Codes',
-    body: codeCheckSummary.status,
-    href: '/codes',
-    icon: ClipboardList,
-  },
-  {
-    title: 'Tier List',
-    body: 'Early unit-role priority',
-    href: '/tier-list',
-    icon: Trophy,
-  },
-  {
-    title: 'Beginner Guide',
-    body: 'Codes, summons, and first carry',
-    href: '/guides/beginner-guide',
-    icon: BookOpen,
-  },
-  {
-    title: 'Traits',
-    body: 'Trait Shards and Perfect Cube rules',
-    href: '/traits',
-    icon: Sparkles,
-  },
-];
-
-const topicLinks = [
-  {
-    title: 'Units',
-    body: 'Carry, boss damage, control, support, economy, and starter filler roles.',
-    href: '/units',
-    icon: Swords,
-  },
-  {
-    title: 'Reroll',
-    body: 'Stat Rerolls, Reroll Cubes, and the one-carry-at-a-time rule.',
-    href: '/reroll',
-    icon: RotateCcw,
-  },
-  {
-    title: 'Game Modes',
-    body: 'Waves, bosses, co-op, and launch-stage rank pressure.',
-    href: '/game-modes',
-    icon: Shield,
-  },
-  {
-    title: 'Discord',
-    body: 'Official link checks, Trello status, and community safety notes.',
-    href: '/discord',
-    icon: Users,
-  },
-];
-
-const coreKeywordLinks = [
-  {
-    keyword: 'Anime Squadron codes',
-    href: '/codes',
-    intent: 'Active rewards and redeem fixes',
-  },
-  {
-    keyword: 'Anime Squadron tier list',
-    href: '/tier-list',
-    intent: 'Best unit roles and early meta',
-  },
-  {
-    keyword: 'Anime Squadron units',
-    href: '/units',
-    intent: 'Carry, boss damage, control, support',
-  },
-  {
-    keyword: 'Anime Squadron traits',
-    href: '/traits',
-    intent: 'Trait Shards and Perfect Cube rules',
-  },
-  {
-    keyword: 'Anime Squadron reroll',
-    href: '/reroll',
-    intent: 'Stat Rerolls and Reroll Cubes',
-  },
-  {
-    keyword: 'Anime Squadron game modes',
-    href: '/game-modes',
-    intent: 'Waves, bosses, co-op, ranks',
-  },
-  {
-    keyword: 'Anime Squadron Discord',
-    href: '/discord',
-    intent: 'Discord, Trello, official Wiki status',
-  },
-  {
-    keyword: 'Anime Squadron download',
-    href: '/download',
-    intent: 'Official Roblox link and safety',
-  },
-  {
-    keyword: 'Anime Squadron updates',
-    href: '/updates',
-    intent: 'Early-access source changes',
-  },
-];
+const primaryIcons = [ClipboardList, Trophy, Users, BookOpen];
+const topicIcons = [Swords, RotateCcw, Shield, Sparkles];
 
 const guideKeywordLinks = [
   {
@@ -177,11 +79,21 @@ const guideKeywordLinks = [
   },
 ];
 
-export function AnimeSquadronHomePage() {
+export function AnimeSquadronHomePage({ locale }: { locale?: string }) {
+  const copy = getAnimeSquadronCopy(locale);
   const latestGuides = guides;
   const recommendedRoles = unitRoleRankings.filter(
     (entry) => entry.tier === 'Recommended'
   );
+  const primaryLinks = copy.home.primaryLinks.map((item, index) => ({
+    ...item,
+    body: index === 0 ? codeCheckSummary.status : item.body,
+    icon: primaryIcons[index] ?? ClipboardList,
+  }));
+  const topicLinks = copy.home.topicLinks.map((item, index) => ({
+    ...item,
+    icon: topicIcons[index] ?? Swords,
+  }));
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -232,14 +144,13 @@ export function AnimeSquadronHomePage() {
         <Container className="relative px-4 py-14 md:py-20 lg:min-h-[640px] lg:py-24">
           <div className="max-w-3xl space-y-6">
             <Badge className="bg-[#37D6D0] text-[#041414]">
-              Unofficial Roblox strategy wiki
+              {copy.home.badge}
             </Badge>
             <h1 className="font-display text-4xl font-black leading-tight sm:text-5xl md:text-7xl">
-              Anime Squadron Wiki
+              {copy.home.h1}
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-[#F2D9C3] md:text-xl">
-              Codes, unit-role tier lists, trait reroll rules, launch spending
-              priorities, game modes, and safe Roblox links for Anime Squadron.
+              {copy.home.intro}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button
@@ -247,7 +158,7 @@ export function AnimeSquadronHomePage() {
                 className="bg-[#E03A22] text-[#FFF5EA] hover:bg-[#FF5538]"
               >
                 <LocaleLink href="/codes">
-                  Copy active codes
+                  {copy.home.codesCta}
                   <ArrowRight className="size-4" />
                 </LocaleLink>
               </Button>
@@ -256,8 +167,8 @@ export function AnimeSquadronHomePage() {
                 variant="outline"
                 className="border-[#37D6D0] bg-[#090706]/45 text-[#FFF5EA] hover:bg-[#37D6D0] hover:text-[#041414]"
               >
-                <LocaleLink href="/guides/beginner-guide">
-                  Start beginner guide
+                <LocaleLink href="/tier-list">
+                  {copy.home.secondaryCta}
                 </LocaleLink>
               </Button>
             </div>
@@ -270,7 +181,7 @@ export function AnimeSquadronHomePage() {
                 className="inline-flex items-center gap-2 rounded-md border border-[#3A2A24] bg-[#130D0B] px-3 py-2 text-xs font-medium text-[#D5C6B7] transition hover:border-[#37D6D0] hover:text-[#37D6D0]"
               >
                 <RadioTower className="size-4" />
-                Official Roblox page
+                {copy.home.robloxLabel}
               </a>
             </div>
           </div>
@@ -301,16 +212,13 @@ export function AnimeSquadronHomePage() {
         <Container className="grid gap-6 px-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="font-semibold uppercase tracking-[0.18em] text-[#37D6D0]">
-              Launch route
+              {copy.home.launchEyebrow}
             </p>
             <h2 className="mt-2 font-display text-3xl font-black">
-              Redeem codes, build one carry, protect Perfect Cubes
+              {copy.home.launchHeading}
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#D5C6B7]">
-              Anime Squadron is still in early access, so the best launch plan
-              is conservative: redeem the newest codes first, test your summons,
-              upgrade one main damage unit, and wait before spending rare reroll
-              materials on filler.
+              {copy.home.launchBody}
             </p>
           </div>
 
@@ -338,25 +246,23 @@ export function AnimeSquadronHomePage() {
         <Container className="space-y-6 px-4">
           <div className="max-w-3xl">
             <p className="font-semibold uppercase tracking-[0.18em] text-[#37D6D0]">
-              Search hub
+              {copy.home.searchEyebrow}
             </p>
             <h2 className="mt-2 font-display text-3xl font-black">
-              Every Anime Squadron keyword has a page to continue from
+              {copy.home.searchHeading}
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#D5C6B7]">
-              Use the homepage as the index for the full guide set: codes, tier
-              list, units, traits, rerolls, game modes, Discord, download, and
-              the long-tail guides players search for after launch.
+              {copy.home.searchBody}
             </p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
             <section className="rounded-lg border border-[#3A2A24] bg-[#130D0B] p-5">
               <h3 className="font-display text-2xl font-bold">
-                Core Anime Squadron pages
+                {copy.home.corePagesHeading}
               </h3>
               <div className="mt-4 grid gap-3 md:grid-cols-2">
-                {coreKeywordLinks.map((item) => (
+                {copy.home.coreKeywordLinks.map((item) => (
                   <LocaleLink
                     key={item.href}
                     href={item.href}
@@ -375,7 +281,7 @@ export function AnimeSquadronHomePage() {
 
             <section className="rounded-lg border border-[#3A2A24] bg-[#130D0B] p-5">
               <h3 className="font-display text-2xl font-bold">
-                Guide long-tail keywords
+                {copy.home.guideKeywordsHeading}
               </h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {guideKeywordLinks.map((item) => (
@@ -403,10 +309,10 @@ export function AnimeSquadronHomePage() {
         <Container className="space-y-6 px-4">
           <div className="max-w-3xl">
             <p className="font-semibold uppercase tracking-[0.18em] text-[#37D6D0]">
-              Tier list snapshot
+              {copy.home.tierEyebrow}
             </p>
             <h2 className="mt-2 font-display text-3xl font-black">
-              Rank unit jobs before chasing unit names
+              {copy.home.tierHeading}
             </h2>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
@@ -440,14 +346,14 @@ export function AnimeSquadronHomePage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-3xl">
               <p className="font-semibold uppercase tracking-[0.18em] text-[#37D6D0]">
-                Latest guides
+                {copy.home.guidesEyebrow}
               </p>
               <h2 className="mt-2 font-display text-3xl font-black">
-                Read the decision page before spending rewards
+                {copy.home.guidesHeading}
               </h2>
             </div>
             <Button asChild variant="outline">
-              <LocaleLink href="/guides">All guides</LocaleLink>
+              <LocaleLink href="/guides">{copy.home.allGuides}</LocaleLink>
             </Button>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -473,9 +379,7 @@ export function AnimeSquadronHomePage() {
             <div className="flex flex-wrap items-center gap-3">
               <Gem className="size-6 text-[#F3B23A]" />
               <p className="text-sm leading-7 text-[#D5C6B7]">
-                Site status: unofficial, source-tracked, and built for
-                early-access decisions. It does not provide scripts, exploits,
-                unsafe APKs, or fake official claims.
+                {copy.home.siteStatus}
               </p>
             </div>
           </div>
