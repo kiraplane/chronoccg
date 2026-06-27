@@ -814,6 +814,160 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: 'kickstarter-rewards-guide',
+    title: 'Chrono CCG Kickstarter Rewards Guide',
+    seoTitle: 'Chrono CCG Kickstarter - Rewards, Beta Access and Email Checks',
+    seoDescription:
+      'Use this Chrono CCG Kickstarter guide to check backer rewards, beta access, email delivery, account wipes, creator codes, and what to do before opening packs.',
+    summary:
+      'If you backed Chrono CCG, the useful first step is not deckbuilding. Confirm reward delivery, account state, and beta access before you spend anything.',
+    category: 'Updates',
+    difficulty: 'Beginner',
+    coverImageUrl: videoCover(videos.introCode),
+    publishedAt: CHECKED_AT,
+    updatedAt: CHECKED_AT,
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Built for Kickstarter and Early Access reward demand around the beta launch and account-reset patch.',
+    videoSearchQueries: [
+      'Chrono CCG Kickstarter rewards',
+      'Chrono CCG early access rewards',
+      'Chrono CCG beta rewards',
+    ],
+    tags: ['Kickstarter', 'Rewards', 'Open Beta'],
+    relatedRoutes: [
+      '/download',
+      '/codes',
+      '/updates',
+      '/guides/beta-update-rewards-guide',
+      '/guides/beginner-guide',
+    ],
+    body: [
+      {
+        heading: 'Check reward access before you build decks',
+        paragraphs: [
+          'Kickstarter and Early Access players should start with account housekeeping. If a reward is missing, opening packs, crafting, or switching decks will not fix it. Confirm the email tied to the purchase, check spam folders, and make sure you are logging into the same account path you used for beta access.',
+          'Once rewards are visible, move slowly. Chrono CCG is in a beta environment, so the best first action is to understand what is permanent, what changed in the latest patch, and which rewards are meant to help you start rather than define your entire collection plan.',
+        ],
+      },
+      {
+        heading: 'Understand the wipe status',
+        paragraphs: [
+          'The most important backer question is whether progress has been reset. The current beta messaging says the major account and collection reset has already happened and that players should not expect another wipe from that point.',
+          'That makes post-reset choices more meaningful. Redeem codes, claim rewards, and open packs with a plan, because the account is now closer to the version you will actually keep playing.',
+        ],
+      },
+      {
+        heading: 'Use rewards to learn one deck, not every deck',
+        paragraphs: [
+          'Backer rewards can make the account feel rich on day one. That is useful, but it can also scatter your focus. Pick one simple deck shell, learn the rules around priority and the chain, then use extra cards to test alternatives after the first plan makes sense.',
+          'If you backed the game because you like deckbuilding, give yourself a first rule: do not craft or chase a second archetype until you can explain why the first one loses.',
+        ],
+      },
+      {
+        heading: 'What to do if rewards are missing',
+        paragraphs: [
+          'If rewards are missing, do not panic-spend to compensate. Check the purchase email, check the account route, restart the client, and look for beta reward instructions in official update areas. If the issue still remains, contact support with the email, purchase tier, and account information ready.',
+          'Avoid any page that asks for passwords, wallet connections, or external reward tools. Chrono CCG rewards should resolve through the normal game, account, and support flow.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Where should Kickstarter backers check first?',
+        answer:
+          'Check the email tied to the purchase, spam folders, the correct game account, and current beta reward instructions before opening packs.',
+      },
+      {
+        question: 'Did Chrono CCG wipe beta accounts?',
+        answer:
+          'The major beta reset already happened, and current beta messaging says no further wipe is planned from that point.',
+      },
+      {
+        question: 'Should backers spend all rewards immediately?',
+        answer:
+          'No. Pick one deck plan, learn the rules, then spend after you know what the account actually needs.',
+      },
+    ],
+  },
+  {
+    slug: 'release-date-online-guide',
+    title: 'Chrono CCG Release Date and Online Guide',
+    seoTitle: 'Chrono CCG Release Date - Open Beta, Online Play and Download',
+    seoDescription:
+      'Check Chrono CCG release date status, open beta access, online play expectations, Steam and Epic download routes, wipes, and first-session priorities.',
+    summary:
+      'Chrono CCG is already in the live beta phase. New players should focus on safe download, online rules, no-wipe status, and a simple first deck.',
+    category: 'Download',
+    difficulty: 'Beginner',
+    coverImageUrl: videoCover(videos.beginner),
+    publishedAt: CHECKED_AT,
+    updatedAt: CHECKED_AT,
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Created for release-date, online, and review-adjacent demand after the open beta launch.',
+    videoSearchQueries: [
+      'Chrono CCG release date',
+      'Chrono CCG online beta',
+      'Chrono CCG Steam Epic download',
+    ],
+    tags: ['Release Date', 'Open Beta', 'Online'],
+    relatedRoutes: [
+      '/download',
+      '/rules',
+      '/decks',
+      '/codes',
+      '/guides/steam-epic-download-guide',
+    ],
+    body: [
+      {
+        heading: 'Treat release-date searches as a start-now checklist',
+        paragraphs: [
+          'Chrono CCG is past the simple "is it coming?" question. The useful release-date answer for a new player is whether the beta is playable, where to download it safely, and what to learn before entering online matches.',
+          'Start with the official download route, then read the rules. The game tells players to learn outside the client because the beta does not fully tutorialize every timing window yet. That makes rules reading part of the first-session route, not optional homework.',
+        ],
+      },
+      {
+        heading: 'Online play rewards clean fundamentals',
+        paragraphs: [
+          'Online matches are decided by more than card rarity. Priority, chain timing, attack-token turns, Divers, timelines, and Core durability all matter quickly. A beginner who understands those pieces can get more value from a modest deck than a player who copies a list without knowing why it works.',
+          'Use the first online games to learn when to pass priority, when to hold a fast action, and when the board is asking for defense instead of damage.',
+        ],
+      },
+      {
+        heading: 'Review the game by the right standard',
+        paragraphs: [
+          'A fair early review should ask whether the rules are interesting, whether the client is stable enough for beta, whether deck identities feel different, and whether the economy respects your time. Do not judge the whole game by one starter draw or one unfamiliar priority mistake.',
+          'If you like card games with timing windows, deck identity, and digital-first rule clarity, Chrono CCG is worth testing. If you want a finished tutorialized campaign first, wait for later beta improvements.',
+        ],
+      },
+      {
+        heading: 'First-session route',
+        paragraphs: [
+          'Download from a safe store, claim current codes, read the rules, pick one starter deck, then play enough games to find the first real confusion. After that, use the guide hub by problem: priority for timing mistakes, syndicates for identity mistakes, deckbuilding for messy lists, and cards for name lookups.',
+          'That route keeps the launch experience practical instead of turning it into a pile of tabs and half-copied deck lists.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is Chrono CCG playable online?',
+        answer:
+          'Yes. Treat it as a live beta card game and learn priority, chain timing, Divers, and timelines before copying advanced decks.',
+      },
+      {
+        question: 'Where should I download Chrono CCG?',
+        answer:
+          'Use the normal Steam or Epic route covered on the download page. Avoid APKs or third-party installers.',
+      },
+      {
+        question: 'Is Chrono CCG worth trying now?',
+        answer:
+          'Try it now if you enjoy competitive card-game rules and beta iteration. Wait if you need a fully guided tutorial experience first.',
+      },
+    ],
+  },
 ];
 
 export function getGuide(slug: string) {
@@ -855,6 +1009,8 @@ export const relatedRouteLabels: Record<string, string> = {
   '/guides/card-list-and-deck-builder-guide': 'Card List Guide',
   '/guides/codes-redeem-guide': 'Redeem Codes',
   '/guides/diver-deckbuilding-guide': 'Diver Deckbuilding',
+  '/guides/kickstarter-rewards-guide': 'Kickstarter Rewards',
+  '/guides/release-date-online-guide': 'Release Date',
   '/guides/starter-decks-guide': 'Starter Decks',
   '/guides/steam-epic-download-guide': 'Steam / Epic',
   '/guides/syndicates-guide': 'Syndicates Guide',
