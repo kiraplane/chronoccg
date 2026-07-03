@@ -4,7 +4,7 @@ import type { MetadataRoute } from 'next';
 import { routing } from '../i18n/routing';
 import { getCanonicalBaseUrl } from '../lib/urls/urls';
 
-const stableLastModified = new Date('2026-06-25T00:00:00.000Z');
+const stableLastModified = new Date('2026-07-03T00:00:00.000Z');
 
 function getLocalizedRoute(locale: string, route: string) {
   if (locale === routing.defaultLocale) {
@@ -32,6 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ? 1
             : route === Routes.Codes ||
                 route === Routes.Decks ||
+                route === Routes.Meta ||
                 route === Routes.Rules ||
                 route === Routes.Download ||
                 route === Routes.TierList

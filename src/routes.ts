@@ -17,6 +17,7 @@ export enum Routes {
   Rules = '/rules',
   Syndicates = '/syndicates',
   Decks = '/decks',
+  Meta = '/meta',
   Cards = '/cards',
   Tools = '/tools',
   CardFinder = '/tools/card-finder',

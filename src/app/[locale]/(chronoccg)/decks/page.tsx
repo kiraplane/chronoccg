@@ -101,6 +101,31 @@ export default function DecksPage() {
           ))}
         </section>
 
+        <section className="rounded-lg border border-[#3B3128] bg-[#14100D] p-6">
+          <Badge className="bg-[#63E6DD] text-[#051316]">Beta meta</Badge>
+          <div className="mt-4 grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
+            <div>
+              <h2 className="font-display text-3xl font-black">
+                Use decks as the route, then check meta context
+              </h2>
+              <p className="mt-3 text-[#D8CDBA] text-sm leading-7">
+                Deck lists are useful only when they explain the job they solve:
+                early ladder pressure, board growth, bleed pressure, control
+                timing, or value loops. The meta hub connects those jobs to card
+                search, curve checks, and the current tier-list watch.
+              </p>
+            </div>
+            <div className="grid gap-3">
+              <Button asChild className="bg-[#63E6DD] text-[#051316]">
+                <LocaleLink href="/meta">Open Meta Hub</LocaleLink>
+              </Button>
+              <Button asChild variant="outline">
+                <LocaleLink href="/tier-list">Tier List Watch</LocaleLink>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         <FaqSection
           items={[
             {

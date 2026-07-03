@@ -78,6 +78,40 @@ export default function GuidesPage() {
           ))}
         </section>
 
+        <section className="grid gap-5 md:grid-cols-3">
+          {[
+            {
+              title: 'Decks',
+              body: 'Starter archetypes, Diver access, curve checks, and the jobs each early deck solves.',
+              href: '/decks',
+            },
+            {
+              title: 'Meta Hub',
+              body: 'A safer beta meta entry that links decks, cards, tier-watch notes, and current checks.',
+              href: '/meta',
+            },
+            {
+              title: 'Card List',
+              body: 'Official card snapshot with costs, types, syndicates, rarities, and detail pages.',
+              href: '/cards',
+            },
+          ].map((item) => (
+            <LocaleLink
+              key={item.href}
+              href={item.href}
+              className="rounded-lg border border-[#3B3128] bg-[#14100D] p-5 transition hover:border-[#63E6DD]"
+            >
+              <h2 className="font-display text-2xl font-bold">{item.title}</h2>
+              <p className="mt-3 text-[#D8CDBA] text-sm leading-6">
+                {item.body}
+              </p>
+              <div className="mt-4 text-[#63E6DD] text-sm font-semibold">
+                Open page
+              </div>
+            </LocaleLink>
+          ))}
+        </section>
+
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {guides.map((guide) => (
             <article

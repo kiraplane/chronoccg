@@ -122,10 +122,17 @@ export function useNavbarLinks(): NestedMenuItem[] {
         },
         {
           title: 'Meta Watch',
-          description: 'Open beta tier-list demand without fake final ranks.',
-          href: Routes.TierList,
+          description: 'Deck signals, card checks, and beta meta links.',
+          href: Routes.Meta,
           external: false,
           icon: <RadioTower className="size-4" />,
+        },
+        {
+          title: 'Tier List',
+          description: 'Early beta ranking notes and confidence labels.',
+          href: Routes.TierList,
+          external: false,
+          icon: <Layers3 className="size-4" />,
         },
         {
           title: 'Starter Decks',

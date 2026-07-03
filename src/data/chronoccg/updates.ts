@@ -3,6 +3,20 @@ import type { GameUpdate } from './types';
 
 export const updates: GameUpdate[] = [
   {
+    slug: 'beta-season-2-begins',
+    title: 'Beta Season 2 Begins',
+    publishedAt: '2026-07-02',
+    summary:
+      'Steam now lists Beta Season 2 as the latest regular Chrono CCG update. Treat deck, card-list, and meta pages as live-watch surfaces while creator stream codes remain source-checked rather than game-tested.',
+    source: {
+      type: 'store',
+      label: 'Chrono CCG on Steam - Beta Season 2 Begins',
+      url: 'https://store.steampowered.com/app/4221310/Chrono_CCG/',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
     slug: 'patch-0-6-11-welcome-to-beta',
     title: 'Patch 0.6.11 - Welcome to Beta',
     publishedAt: '2026-06-23',

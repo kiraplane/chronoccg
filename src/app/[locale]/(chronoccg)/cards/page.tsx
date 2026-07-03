@@ -255,6 +255,9 @@ export default function CardsPage() {
                 <LocaleLink href="/decks">Open Decks</LocaleLink>
               </Button>
               <Button asChild variant="outline">
+                <LocaleLink href="/meta">Meta Hub</LocaleLink>
+              </Button>
+              <Button asChild variant="outline">
                 <LocaleLink href="/tools/deck-checker">Deck Checker</LocaleLink>
               </Button>
             </div>
