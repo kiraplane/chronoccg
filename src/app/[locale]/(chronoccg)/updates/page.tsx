@@ -37,11 +37,19 @@ export default function UpdatesPage() {
             Official beta and patch notes that change how new players should
             read rules, redeem rewards, test decks, and follow the early meta.
           </p>
-          <Button asChild variant="outline">
-            <LocaleLink href="/guides/beta-update-rewards-guide">
-              Beta Rewards Guide
-            </LocaleLink>
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="outline">
+              <LocaleLink href="/guides/beta-update-rewards-guide">
+                Beta Rewards Guide
+              </LocaleLink>
+            </Button>
+            <Button asChild variant="outline">
+              <LocaleLink href="/decks">Recheck Decks</LocaleLink>
+            </Button>
+            <Button asChild variant="outline">
+              <LocaleLink href="/cards">Card List</LocaleLink>
+            </Button>
+          </div>
         </header>
 
         <section className="space-y-4">
@@ -84,7 +92,7 @@ export default function UpdatesPage() {
             {
               question: 'What is the most important beta update?',
               answer:
-                'Patch 0.6.11 opened beta, reset accounts and collections, and says there will be no further wipes.',
+                'Patch 0.7.8 is the newest official update checked today, while Patch 0.7.1 started Beta Season 2 with new cards and balance changes.',
             },
             {
               question: 'Where should I check official updates?',
@@ -94,7 +102,7 @@ export default function UpdatesPage() {
             {
               question: 'Do updates affect deck guides?',
               answer:
-                'Yes. Balance changes, card text changes, and bug fixes can change whether a deck guide is still accurate.',
+                'Yes. New cards, card text changes, Draft fixes, timing fixes, and compensation can change whether a deck guide or card interaction note is still accurate.',
             },
           ]}
         />

@@ -3,6 +3,34 @@ import type { GameUpdate } from './types';
 
 export const updates: GameUpdate[] = [
   {
+    slug: 'patch-0-7-8-bug-fixes-and-compensation',
+    title: 'Patch 0.7.8 - Bug Fixes and Compensation',
+    publishedAt: '2026-07-03',
+    summary:
+      'Official notes add missing Draft Tickets, Daily Double packs, Kickstarter cosmetics, and Season Track ownership where eligible. The same patch also changes Future Sight handling, Draft stability, chain timing when the timer expires, dynamic previews, and a long list of card interaction bugs. Treat decks, Draft advice, and card pages as live-watch surfaces after this patch.',
+    source: {
+      type: 'official',
+      label: 'Patch 0.7.8 - Bug Fixes and Compensation',
+      url: 'https://playchrono.com/news/patch-072-bug-fixes-and-compensation',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
+    slug: 'patch-0-7-1-beta-season-2-update',
+    title: 'Patch 0.7.1 - Beta Season 2 Update',
+    publishedAt: '2026-07-01',
+    summary:
+      'Beta Season 2 introduces six new cards, rank resets by two ranks, a Season Track, shop bundles, card backs, cosmetics, and balance changes. The important player-facing action is to re-check deck plans, card list pages, and meta notes before crafting around old beta assumptions.',
+    source: {
+      type: 'official',
+      label: 'Patch 0.7.1 - Beta Season 2 Update',
+      url: 'https://playchrono.com/news/july-season-update',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
     slug: 'beta-season-2-begins',
     title: 'Beta Season 2 Begins',
     publishedAt: '2026-07-02',
