@@ -3,6 +3,20 @@ import type { GameUpdate } from './types';
 
 export const updates: GameUpdate[] = [
   {
+    slug: 'july-2026-dev-update',
+    title: 'July 2026 Dev Update - Trials, Tournaments, and Cadence',
+    publishedAt: '2026-07-04',
+    summary:
+      'Official July dev notes say Chrono passed 10,000 players in its first beta week, will run new Seasons at the start of each month with 6 new Core Set cards, then follow with a Mid-Season Update about two weeks later. Trials mode, the first tournament, deck-builder wildcard purchasing, clearer Daily Quests, and pack-tab improvements are now the next watch items for decks, card list, and meta pages.',
+    source: {
+      type: 'official',
+      label: 'July 2026 Dev Update',
+      url: 'https://playchrono.com/news/july-2026-dev-update',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
     slug: 'patch-0-7-8-bug-fixes-and-compensation',
     title: 'Patch 0.7.8 - Bug Fixes and Compensation',
     publishedAt: '2026-07-03',
