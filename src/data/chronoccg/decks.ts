@@ -2,6 +2,32 @@ import type { DeckArchetype, MetaSignal } from './types';
 
 export const deckArchetypes: DeckArchetype[] = [
   {
+    slug: 'season-2-packshop-midrange',
+    name: 'Season 2 Packshop Midrange',
+    syndicates: ['Flexible'],
+    difficulty: 'Intermediate',
+    plan: 'Use the July Season 2 card and packshop changes as a reason to rebuild a stable midrange shell instead of copying an old beta list unchanged.',
+    whyItMatters:
+      'Official July notes added a Season Track, new Core Set cards, pack-tab/shop changes, and rapid follow-up bug fixes, so decks that rely on old access assumptions should be rechecked before crafting.',
+    watchFor:
+      'Do not commit wildcards or currency until the card actually improves your current two-Diver plan and curve.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/updates', '/cards', '/tools/deck-checker'],
+  },
+  {
+    slug: 'draft-ticket-tempo',
+    name: 'Draft Ticket Tempo',
+    syndicates: ['Flexible'],
+    difficulty: 'Beginner',
+    plan: 'Treat Draft and Trials rewards as account-progression pressure: build simple tempo decks for testing card quality before moving those ideas into ladder.',
+    whyItMatters:
+      'Patch 0.7.8 compensation and July dev notes both mention Draft Tickets, Trials, tournament cadence, and reward cleanup, making limited-mode preparation a real player question.',
+    watchFor:
+      'Draft performance does not automatically prove a ladder deck is good. Move only the repeatable card jobs into constructed lists.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/meta', '/guides/starter-decks-guide', '/updates'],
+  },
+  {
     slug: 'sprouts-beginner',
     name: 'Sprouts Beginner',
     syndicates: ['Lifeblood'],
@@ -96,5 +122,19 @@ export const metaSignals: MetaSignal[] = [
     summary:
       'Autocomplete shows mobile demand, but official store pages currently focus on Steam and Epic. Cover it safely in the download page without promising mobile support.',
     route: '/download',
+  },
+  {
+    label: 'Season 2 patch deck checks',
+    status: 'direct',
+    summary:
+      'Official July and 0.7.8 notes changed the card, reward, shop, and Draft context. Existing decks should be rechecked against current card access before players spend currency.',
+    route: '/decks',
+  },
+  {
+    label: 'Trials and tournament prep',
+    status: 'watch',
+    summary:
+      'Official cadence notes point to Trials and tournament activity. Keep a watch item until the format details are stable enough for a dedicated tool or guide.',
+    route: '/updates',
   },
 ];
