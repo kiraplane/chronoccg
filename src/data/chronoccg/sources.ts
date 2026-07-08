@@ -1,6 +1,6 @@
 import type { DataSource } from './types';
 
-export const CHECKED_AT = '2026-07-07';
+export const CHECKED_AT = '2026-07-08';
 
 export const officialGameFacts = {
   name: 'Chrono CCG',
