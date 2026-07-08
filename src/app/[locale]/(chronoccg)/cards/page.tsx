@@ -114,6 +114,24 @@ function FeaturedCard({ card }: { card: ChronoCard }) {
   );
 }
 
+const deckEntryLinks = [
+  {
+    title: 'Starter deck pieces',
+    href: '/guides/starter-decks-guide',
+    job: 'Find low-complexity cards that teach board space, combat, and early pressure before spending currency.',
+  },
+  {
+    title: 'Season 2 deck checks',
+    href: '/decks',
+    job: 'Re-check July/Season 2 card access, packshop changes, and curve shape before copying an older beta list.',
+  },
+  {
+    title: 'Meta watch routes',
+    href: '/meta',
+    job: 'Use card roles as signals for deck jobs such as tempo, control, burn, bleed, and Trials prep.',
+  },
+];
+
 function CardTable({ cards }: { cards: ChronoCard[] }) {
   return (
     <div className="overflow-x-auto rounded-lg border border-[#3B3128]">
@@ -261,6 +279,36 @@ export default function CardsPage() {
                 <LocaleLink href="/tools/deck-checker">Deck Checker</LocaleLink>
               </Button>
             </div>
+          </div>
+        </section>
+
+        <section className="rounded-lg border border-[#3B3128] bg-[#14100D] p-6">
+          <Badge className="bg-[#63E6DD] text-[#051316]">
+            Deck entry links
+          </Badge>
+          <h2 className="mt-4 font-display text-3xl font-black">
+            Use card data to choose the next deck page
+          </h2>
+          <p className="mt-3 max-w-3xl text-[#D8CDBA] text-sm leading-7">
+            Card-name searches should land here first, but deck searches need a
+            next step. Open the route that matches the reason you looked up the
+            card: beginner safety, Season 2 list repair, or meta comparison.
+          </p>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {deckEntryLinks.map((item) => (
+              <LocaleLink
+                key={item.href}
+                href={item.href}
+                className="rounded-lg border border-[#3B3128] bg-[#0A0D10] p-4 transition hover:border-[#63E6DD]"
+              >
+                <h3 className="font-display text-xl font-bold text-[#FFF5E1]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[#D8CDBA] text-sm leading-6">
+                  {item.job}
+                </p>
+              </LocaleLink>
+            ))}
           </div>
         </section>
 

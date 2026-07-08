@@ -968,6 +968,95 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: 'beta-season-2-trials-guide',
+    title: 'Chrono CCG Beta Season 2 Trials Guide',
+    seoTitle: 'Chrono CCG Beta Season 2 Trials Guide - Deck Entry and Rewards',
+    seoDescription:
+      'Prepare for Chrono CCG Beta Season 2 Trials with constructed deck entry, reward expectations, BO3 tournament prep, and deck builder changes.',
+    summary:
+      'Beta Season 2 shifts the daily question from only learning cards to building one reliable constructed deck for Trials, rewards, and the end-of-month BO3 tournament.',
+    category: 'Updates',
+    difficulty: 'Intermediate',
+    coverImageUrl: videoCover(videos.tips),
+    publishedAt: CHECKED_AT,
+    updatedAt: CHECKED_AT,
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Built from the official July 2026 dev update, Steam beta context, and current deck/meta search demand.',
+    videoSearchQueries: [
+      'Chrono CCG Beta Season 2 Trials',
+      'Chrono CCG Trials mode deck',
+      'Chrono CCG July 2026 dev update',
+    ],
+    tags: ['Beta Season 2', 'Trials', 'Decks'],
+    relatedRoutes: [
+      '/decks',
+      '/meta',
+      '/cards',
+      '/tools/deck-checker',
+      '/guides/card-list-and-deck-builder-guide',
+    ],
+    body: [
+      {
+        heading: 'Build one Trials deck before chasing every archetype',
+        paragraphs: [
+          'The July 2026 dev update makes Trials the important Beta Season 2 change. Because the mode uses constructed deck entry, the best preparation is not opening every card at random. Choose one deck shell, check whether its Divers and syndicates still make a clear plan, then improve consistency before spending resources on side ideas.',
+          'A good Trials deck should answer three questions before you queue: how it pressures the enemy Core, what it does when behind on board, and which cards are only there because they look exciting. Remove the third group first.',
+        ],
+        bullets: [
+          'Pick one main archetype from the decks hub.',
+          'Use the card list to check your curve and fast-action count.',
+          'Play enough games to know the bad matchup before entering serious runs.',
+          'Hold resources for the deck that actually reaches rewards, not the deck that only looks fun.',
+        ],
+      },
+      {
+        heading: 'Treat rewards as pacing, not as a reason to overbuild',
+        paragraphs: [
+          'Trials rewards can make the season feel urgent, but overbuilding too early usually creates a weaker collection. Spend on the cards that improve your selected deck across several matchups, then use packs and wildcards to fill flexible slots.',
+          'If a reward path asks for wins or repeat entries, stability matters more than surprise value. A boring deck that makes the same strong turns will usually teach more than a pile of one-of cards.',
+        ],
+      },
+      {
+        heading: 'Prepare for the BO3 tournament with two plans',
+        paragraphs: [
+          'The official update mentions an end-of-month tournament with BO3 structure and two decks. That changes how you should think about the meta page. You do not only need one ladder list; you need a second deck that covers a different weakness or lets you adapt after game one.',
+          'Use the meta hub as a watch list, not as a solved tier list. Early beta balance moves quickly, and a tournament format can reward comfort, matchup spread, and side-plan clarity more than the loudest deck on week one.',
+        ],
+        bullets: [
+          'Main deck: the list you can pilot under pressure.',
+          'Second deck: a different plan, not the same weakness with new art.',
+          'Practice priority windows on both decks before BO3.',
+          'Track patch notes before locking a tournament choice.',
+        ],
+      },
+      {
+        heading: 'Use the Deck Builder and Packs changes as daily hygiene',
+        paragraphs: [
+          'Deck Builder wildcards and Packs tab improvements are quality-of-life changes, but they matter because they reduce collection mistakes. Use the builder to check missing cards and substitution slots before crafting.',
+          'When a deck is still incomplete, do not force a perfect copy. Mark which cards are core, which are replaceable, and which are only upgrade targets. That keeps the Trials plan playable while the collection catches up.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the first thing to do for Beta Season 2 Trials?',
+        answer:
+          'Choose one constructed deck, check its curve and Divers, then practice it before spending resources on side archetypes.',
+      },
+      {
+        question: 'Should I build for ladder or the BO3 tournament?',
+        answer:
+          'Start with one reliable ladder deck, then prepare a second tournament deck with a different matchup plan.',
+      },
+      {
+        question: 'Is the Chrono CCG meta solved for Season 2?',
+        answer:
+          'No. Treat current lists as beta signals and update them after official balance or tournament results.',
+      },
+    ],
+  },
 ];
 
 export function getGuide(slug: string) {
@@ -1008,6 +1097,7 @@ export const relatedRouteLabels: Record<string, string> = {
   '/guides': 'All Guides',
   '/guides/beginner-guide': 'Beginner Guide',
   '/guides/beta-update-rewards-guide': 'Beta Update',
+  '/guides/beta-season-2-trials-guide': 'Beta Season 2 Trials',
   '/guides/card-list-and-deck-builder-guide': 'Card List Guide',
   '/guides/codes-redeem-guide': 'Redeem Codes',
   '/guides/diver-deckbuilding-guide': 'Diver Deckbuilding',

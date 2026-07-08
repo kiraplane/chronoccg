@@ -28,6 +28,24 @@ export const deckArchetypes: DeckArchetype[] = [
     relatedRoutes: ['/meta', '/guides/starter-decks-guide', '/updates'],
   },
   {
+    slug: 'trials-bo3-two-deck-prep',
+    name: 'Trials BO3 Two-Deck Prep',
+    syndicates: ['Flexible'],
+    difficulty: 'Intermediate',
+    plan: 'Prepare one stable ladder deck and one matchup-cover deck before treating Trials or tournament queues like normal ranked play.',
+    whyItMatters:
+      'Official July notes point to Trials, tournament cadence, and BO3 structure. That changes deck planning from one best list to two lists that cover different weaknesses.',
+    watchFor:
+      'Do not craft a second deck just because it looks popular. Build the second list only when it solves a matchup your main deck repeatedly loses.',
+    sourceConfidence: 'high',
+    relatedRoutes: [
+      '/guides/beta-season-2-trials-guide',
+      '/meta',
+      '/cards',
+      '/tools/deck-checker',
+    ],
+  },
+  {
     slug: 'sprouts-beginner',
     name: 'Sprouts Beginner',
     syndicates: ['Lifeblood'],
