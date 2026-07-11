@@ -28,6 +28,17 @@ export const activeCodes: GameCode[] = [
 
 export const watchCodes: GameCode[] = [
   {
+    code: 'QUESTDOWN',
+    reward: 'Reported free Chrono CCG rewards',
+    status: 'watch',
+    firstSeen: '2026-07-11',
+    lastChecked: CHECKED_AT,
+    sourceLabel: 'YouTube Shorts code lead',
+    confidence: 'watch',
+    notes:
+      'A current YouTube Shorts snippet lists QUESTDOWN alongside ALLIE and BETALAUNCH. Keep it on watch until an official/community text source or in-game redemption confirms the reward.',
+  },
+  {
     code: 'creator stream drops',
     reward: 'Free goodies during beta creator streams',
     status: 'watch',
@@ -62,6 +73,10 @@ export const codeCheckSummary = {
     {
       label: 'YouTube creator results',
       url: 'https://www.youtube.com/results?search_query=Chrono+CCG+codes',
+    },
+    {
+      label: 'YouTube Shorts QUESTDOWN lead',
+      url: 'https://www.youtube.com/results?search_query=Chrono+CCG+QUESTDOWN+code',
     },
   ],
 };
