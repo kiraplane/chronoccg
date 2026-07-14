@@ -1057,6 +1057,95 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: 'keywords-and-status-effects',
+    title: 'Chrono CCG Keywords and Status Effects',
+    seoTitle: 'Chrono CCG Keywords - Status Effects, Priority and Timing',
+    seoDescription:
+      'Learn Chrono CCG keywords and status effects with priority, chain, timelines, shifting, immortalization, Divers and card-text resolution examples.',
+    summary:
+      'Read card text in resolution order, separate persistent status from one-time effects, and use the priority window before memorizing deck-specific combos.',
+    category: 'Rules',
+    difficulty: 'Beginner',
+    coverImageUrl: videoCover(videos.priority),
+    publishedAt: CHECKED_AT,
+    updatedAt: CHECKED_AT,
+    sourceStrategy: 'official',
+    video: videos.priority,
+    videoSearchQueries: [
+      'Chrono CCG keywords status effects',
+      'Chrono CCG priority chain rules',
+      'Chrono CCG card keyword guide',
+    ],
+    sourceNotes:
+      'Uses the official priority explainer, current rules pages and actual card text. If a card conflicts with this glossary after a patch, the live card text and official ruling take precedence.',
+    tags: ['Keywords', 'Status Effects', 'Rules'],
+    relatedRoutes: [
+      '/rules',
+      '/cards',
+      '/guides/timeline-priority-guide',
+      '/guides/diver-deckbuilding-guide',
+      '/updates',
+    ],
+    body: [
+      {
+        heading: 'Read every effect in context',
+        paragraphs: [
+          'A keyword is shorthand, but the surrounding card text still controls target, timing, duration, and limits. Identify the source, legal target, current timeline, and priority window before resolving a familiar word from memory.',
+          'Chrono is in beta. When wording changes, the current live card and official rules take precedence over an older screenshot or deck guide.',
+        ],
+      },
+      {
+        heading: 'Core timing language',
+        paragraphs: [
+          'Priority determines who may act next. The chain records effects that are waiting to resolve. Pass only when you are satisfied with the current chain; once both players pass at the relevant point, resolve in the order shown by the game.',
+        ],
+        bullets: [
+          'Priority: the current right to take an action or pass.',
+          'Chain: queued actions and responses waiting to resolve.',
+          'Timeline: the lane or temporal context that limits where a card operates.',
+          'Shift: movement between valid timeline states or positions as the card specifies.',
+          'Immortalize: a persistent progression or preservation action defined by current card text.',
+        ],
+      },
+      {
+        heading: 'Status effects need four checks',
+        paragraphs: [
+          'For any status, record what applies it, which unit or card holds it, how long it lasts, and what removes or consumes it. A status with the same icon can still behave differently if the source sets a different duration or trigger.',
+        ],
+        bullets: [
+          'Application: when and how the status begins.',
+          'Target: card, Diver, timeline, or another legal object.',
+          'Duration: this action, this turn, or persistent until removed.',
+          'Consumption: whether a later effect spends or clears it.',
+        ],
+      },
+      {
+        heading: 'Use Divers as rule anchors',
+        paragraphs: [
+          'Divers define the deck plan and often reveal which keywords matter most. When learning a new deck, mark the Diver text, three recurring keywords in the list, and the main priority window where the deck expects a response.',
+          'Test the sequence in an unranked or low-pressure game before copying a full combo. Understanding one interaction is more durable than memorizing ten exact clicks from an older patch.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What wins when a guide and live card text disagree?',
+        answer:
+          'Use the current live card text and any official ruling. Beta wording and timing can change after the guide was published.',
+      },
+      {
+        question: 'What should I learn first: keywords or decks?',
+        answer:
+          'Learn priority, chain, timeline context and the recurring keywords in one starter deck before studying the wider meta.',
+      },
+      {
+        question: 'How do I track a status effect?',
+        answer:
+          'Check its source, target, duration, and removal or consumption condition.',
+      },
+    ],
+  },
 ];
 
 export function getGuide(slug: string) {
@@ -1102,6 +1191,7 @@ export const relatedRouteLabels: Record<string, string> = {
   '/guides/codes-redeem-guide': 'Redeem Codes',
   '/guides/diver-deckbuilding-guide': 'Diver Deckbuilding',
   '/guides/kickstarter-rewards-guide': 'Kickstarter Rewards',
+  '/guides/keywords-and-status-effects': 'Keywords and Status Effects',
   '/guides/release-date-online-guide': 'Release Date',
   '/guides/starter-decks-guide': 'Starter Decks',
   '/guides/steam-epic-download-guide': 'Steam / Epic',
