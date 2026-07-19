@@ -3,6 +3,20 @@ import type { GameUpdate } from './types';
 
 export const updates: GameUpdate[] = [
   {
+    slug: 'july-2026-midseason-patch',
+    title: 'July 2026 Midseason Patch',
+    publishedAt: '2026-07-16',
+    summary:
+      'The official midseason patch adds Draft reconnect support, updates several card-choice and Strike animations, and fixes interactions involving Decay, Revive, Bloodlust, Graveyard discounts, Temporary, Muffle, Deplete, Rewind, Voiceless Sky, Army of the Sun and summoned blockers. Re-check Draft and deck advice against the current client before relying on older interaction assumptions.',
+    source: {
+      type: 'official',
+      label: 'July Midseason Patch - Maintenance',
+      url: 'https://steamcommunity.com/games/4221310/announcements/detail/1838407329256778',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
     slug: 'july-2026-dev-update',
     title: 'July 2026 Dev Update - Trials, Tournaments, and Cadence',
     publishedAt: '2026-07-04',
