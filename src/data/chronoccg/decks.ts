@@ -2,6 +2,58 @@ import type { DeckArchetype, MetaSignal } from './types';
 
 export const deckArchetypes: DeckArchetype[] = [
   {
+    slug: 'midseason-big-lifeblood',
+    name: 'Midseason Big Lifeblood',
+    syndicates: ['Lifeblood'],
+    difficulty: 'Intermediate',
+    plan: 'Build toward a real board payoff with Harbinger of Power, Evolution Incarnate, and the cheaper Symbiosis instead of relying on a slow control shell to win by default.',
+    whyItMatters:
+      'Patch 0.7.11 moved Harbinger to 6/5, Evolution Incarnate to 7/6, and Symbiosis from 6 to 5 cost. Those are direct incentives to retest a larger Lifeblood curve.',
+    watchFor:
+      'Do not fill the top of the curve with every buffed card. Keep enough early agents and interaction to reach the payoff turn with a board.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/updates', '/cards', '/tools/deck-checker'],
+  },
+  {
+    slug: 'midseason-board-deplete',
+    name: 'Midseason Board Deplete',
+    syndicates: ['Silence'],
+    difficulty: 'Advanced',
+    plan: 'Use cheaper Telepathic Scavenger and The Uncontained to make Deplete matter on the battlefield, then turn Paradox Analysis and Boatswain Corvus into tempo rather than bench-only control.',
+    whyItMatters:
+      'Patch 0.7.11 cut both Deplete agents to 3 cost, changed Paradox Analysis to reduce the two drawn cards by 1, and changed Boatswain Corvus from Expose to Deplete.',
+    watchFor:
+      'The patch also nerfs several control staples. A Deplete deck now needs board presence and cannot assume the old defensive package will carry every matchup.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/updates', '/rules', '/tools/deck-checker'],
+  },
+  {
+    slug: 'midseason-sungrace-board-pressure',
+    name: 'Midseason Sungrace Board Pressure',
+    syndicates: ['Sungrace'],
+    difficulty: 'Intermediate',
+    plan: 'Develop agents, use Stalwart Champion to recover Core health, and convert Armageddonaut plus fast Magmatic Teachings into a combat turn that also threatens the Core.',
+    whyItMatters:
+      'Patch 0.7.11 gave Stalwart Champion Rejuvenate, Armageddonaut Overpower, and Magmatic Teachings Fast speed. The three changes all reward fighting for the board.',
+    watchFor:
+      'Magmatic Teachings now costs 4. Leave energy for the combat window instead of assuming the old 3-cost curve still works.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/updates', '/guides/starter-decks-guide', '/cards'],
+  },
+  {
+    slug: 'midseason-control-downshift',
+    name: 'Midseason Control Downshift',
+    syndicates: ['Silence', 'Splintergleam'],
+    difficulty: 'Advanced',
+    plan: 'Trim the most expensive reactive package and add proactive board cards before taking an older Silence or graveyard-control list back to ladder.',
+    whyItMatters:
+      'The official patch explicitly targets control and raises costs or lowers stats on Not so Fast, Spread the Sickness, Death Jockey, Daville, Rotting Rocker, Ylka, Paradox Cacophony, and Curb the Anomalies.',
+    watchFor:
+      'This is a rebuild warning, not a claim that control is dead. Retest the curve and matchup plan before spending more wildcards.',
+    sourceConfidence: 'high',
+    relatedRoutes: ['/updates', '/meta', '/tools/deck-checker'],
+  },
+  {
     slug: 'season-2-packshop-midrange',
     name: 'Season 2 Packshop Midrange',
     syndicates: ['Flexible'],

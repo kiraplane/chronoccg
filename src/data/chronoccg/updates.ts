@@ -4,14 +4,14 @@ import type { GameUpdate } from './types';
 export const updates: GameUpdate[] = [
   {
     slug: 'july-2026-midseason-patch',
-    title: 'July 2026 Midseason Patch',
+    title: 'Patch 0.7.11 - July 2026 Midseason Balance Update',
     publishedAt: '2026-07-16',
     summary:
-      'The official midseason patch adds Draft reconnect support, updates several card-choice and Strike animations, and fixes interactions involving Decay, Revive, Bloodlust, Graveyard discounts, Temporary, Muffle, Deplete, Rewind, Voiceless Sky, Army of the Sun and summoned blockers. Re-check Draft and deck advice against the current client before relying on older interaction assumptions.',
+      'The first beta midseason balance patch pushes the meta toward board play. Lifeblood gains larger Harbinger and Evolution bodies plus 5-cost Symbiosis; Deplete gains cheaper Telepathic Scavenger and The Uncontained, a redesigned Paradox Analysis, and Deplete on Boatswain Corvus; Sungrace gains Rejuvenate on Stalwart Champion, Overpower on Armageddonaut, and Fast Magmatic Teachings. Control and graveyard shells lose efficiency through nerfs to Not so Fast, Spread the Sickness, Death Jockey, Daville, Rotting Rocker, Ylka, Paradox Cacophony, and Curb the Anomalies. Existing deck lists should be rebuilt around the new curve before crafting.',
     source: {
       type: 'official',
-      label: 'July Midseason Patch - Maintenance',
-      url: 'https://steamcommunity.com/games/4221310/announcements/detail/1838407329256778',
+      label: 'Patch 0.7.11 - July 2026 Mid-Season Update',
+      url: 'https://playchrono.com/news/July-2026-mid-season-update',
       checkedAt: CHECKED_AT,
       confidence: 'high',
     },
