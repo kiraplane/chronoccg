@@ -683,7 +683,7 @@ export const guides: Guide[] = [
     seoDescription:
       'Download Chrono CCG safely through Steam or Epic, understand open beta status, and avoid fake mobile, APK, mod, or private-server links.',
     summary:
-      'Chrono CCG is free to play on Steam and Epic during open beta. Use official store pages, ignore APK/mod shortcuts, and treat mobile demand as unconfirmed until official sources say otherwise.',
+      'Chrono CCG is free to play on Steam and Epic during open beta. Official August notes confirm internal mobile builds, but iOS and Android are not public yet and still need interface work.',
     category: 'Download',
     difficulty: 'Beginner',
     coverImageUrl: '/chronoccg/og-image.jpg',
@@ -710,10 +710,10 @@ export const guides: Guide[] = [
         ],
       },
       {
-        heading: 'Do not chase fake mobile or APK pages',
+        heading: 'Mobile is confirmed in development, not released',
         paragraphs: [
-          'Serper autocomplete shows Chrono CCG mobile demand, but the official store links currently focus on Steam and Epic. Until official sources announce mobile support, any APK, mod, private server, or hacked-client page should be treated as unsafe.',
-          'A safe download page should explain official access and stop there. It should not offer workarounds that risk credentials, malware, or broken clients.',
+          'The official August 2026 developer update says Chrono works internally on iOS and Android, while the interface still needs work before release. The team says mobile will likely arrive before the end of 2026, but it gives no exact date and does not publish a public APK or store link.',
+          'Use Steam or Epic today. Any site offering an Android APK, iOS profile, mod, private server, or hacked client before an official mobile link appears is not the announced mobile build and can risk credentials or device security.',
         ],
       },
       {
@@ -733,12 +733,121 @@ export const guides: Guide[] = [
       {
         question: 'Is there a Chrono CCG mobile version?',
         answer:
-          'Current official sources checked for this build focus on Steam and Epic. Mobile demand exists, but this site does not claim a mobile version until official sources confirm it.',
+          'An official mobile version is in development and works internally on iOS and Android, but it is not publicly released. The developer says it is likely before the end of 2026 without giving an exact date.',
       },
       {
         question: 'Is Chrono CCG free?',
         answer:
           'Yes. Steam lists it as free to play, and Epic lists the base game as free Early Access.',
+      },
+    ],
+  },
+  {
+    slug: 'beta-season-3-mobile-set-2-guide',
+    title: 'Chrono CCG Beta Season 3, Mobile, and Set 2 Guide',
+    seoTitle:
+      'Chrono CCG Season 3 Guide - Mobile, Tutorial and Set 2 Escalation',
+    seoDescription:
+      'Follow the Chrono CCG August 2026 roadmap for Beta Season 3, mobile status, tutorials, Set 2 Escalation, and the August tournament.',
+    summary:
+      'The August roadmap separates what players can use now from what is still in development: Season 3 fixes and Deck Builder changes are current, while mobile, the full tutorial, game log, and Set 2: Escalation remain upcoming.',
+    category: 'Updates',
+    difficulty: 'Beginner',
+    coverImageUrl: '/chronoccg/og-image.jpg',
+    publishedAt: '2026-08-13',
+    updatedAt: '2026-08-13',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Built from the official August 7, 2026 developer update. No exact mobile or Set 2 release date is inferred beyond the developer wording.',
+    videoSearchQueries: [
+      'Chrono CCG Beta Season 3',
+      'Chrono CCG mobile iOS Android',
+      'Chrono CCG Set 2 Escalation',
+    ],
+    tags: ['Beta Season 3', 'Mobile', 'Set 2'],
+    relatedRoutes: [
+      '/updates',
+      '/download',
+      '/guides/beta-season-2-trials-guide',
+      '/tools/deck-checker',
+      '/cards',
+    ],
+    body: [
+      {
+        heading: 'Separate the live Season 3 work from the roadmap',
+        paragraphs: [
+          'Chrono CCG entered Beta Season 3 with roughly a dozen visual-effect improvements plus combat animation and connection fixes. The official August update also describes a revised Deck Builder with filters, deck-specific card backs, and a way to view Immortalized Agents. Those are the current surfaces to recheck before rebuilding a deck or reporting a client problem.',
+          'Mobile, the full tutorial, game log, and Set 2 are roadmap items. They are real official projects, but they are not all playable public features today. Keeping that boundary clear prevents an upcoming feature from being written as a released one.',
+        ],
+      },
+      {
+        heading: 'Use the Deck Builder changes before spending resources',
+        paragraphs: [
+          'Open the current Deck Builder and filter for the syndicates, costs, and card roles your main deck actually needs. Check the selected card back and review Immortalized Agents before changing a list. A cleaner builder makes it easier to distinguish a missing collection piece from a deliberate flex slot.',
+          'Do not rebuild every deck because a new season started. First identify the cards that define your win condition, then inspect the curve and response count in the Deck Checker. Save resources until the revised list completes the same plan more consistently across several games.',
+        ],
+        bullets: [
+          'Filter the pool before crafting or substituting.',
+          'Check Immortalized Agents attached to the account.',
+          'Keep one reliable ladder deck while testing Season 3 changes.',
+          'Use live card text over an older screenshot.',
+        ],
+      },
+      {
+        heading: 'Mobile works internally but is not a public download',
+        paragraphs: [
+          'The developer says Chrono works on iOS and Android internally. The remaining work is focused on the mobile interface, and the team says a release is likely before the end of 2026. That is meaningful confirmation for mobile searches, but it is not an exact release date or permission to download an unofficial APK.',
+          'Continue through Steam or Epic until playchrono.com or an official store account publishes the mobile link. Pre-register only through a verified official destination. Avoid configuration profiles, sideload packages, private servers, and pages that ask for Chrono or platform credentials.',
+        ],
+      },
+      {
+        heading: 'Tutorial and game-log work will change the new-player route',
+        paragraphs: [
+          'The August update says tooltips and hover-to-inspect help are part of the learning improvements, with a game log coming and a proper Tutorial in development. For now, the safest learning order remains official rules, the priority guide, one starter deck, and low-pressure games where each chain can be inspected.',
+          'When the tutorial or game log ships, use it to review the action that produced a confusing board state. It should supplement current card text and official rules rather than replace them. This wiki will update the beginner route when the public client exposes those tools.',
+        ],
+      },
+      {
+        heading: 'Treat Set 2: Escalation as planning context',
+        paragraphs: [
+          'Set 2 is officially named Escalation and is being developed around the Flux theme. The update does not give a card list, pack price, legality date, or release day. Players should therefore avoid hoarding or spending based on invented set data.',
+          'Keep a flexible collection plan: finish the current deck pieces that improve several matchups, hold some resources for future reveals, and wait for official card text before building a Flux deck. Alternate Savage variants are also mentioned, but they need their own published details before becoming a data table or ranking.',
+        ],
+      },
+      {
+        heading: 'Prepare two decks for the August 29-30 tournament',
+        paragraphs: [
+          'The official tournament is scheduled for August 29 and 30. The published structure uses Swiss best-of-three rounds without bans: bring two decks and earn a win with both. The Top 8 advances to day two and receives a card back, while the winner is planned to appear on a future card.',
+          'Choose two decks with distinct plans and practice both under the same timer and priority pressure. One familiar deck plus one complementary matchup plan is safer than two unfinished experiments. Recheck official tournament registration and rules before the event because operational details can change.',
+        ],
+        bullets: [
+          'Format: Swiss best of three, no bans.',
+          'Requirement: bring two decks and win with both.',
+          'Top 8: day-two qualification and card-back reward.',
+          'Recheck registration and timing on the official event surface.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is Chrono CCG available on Android or iOS?',
+        answer:
+          'Not publicly yet. The developer confirms internal iOS and Android builds and says release is likely before the end of 2026, but no exact date is published.',
+      },
+      {
+        question: 'What is Chrono CCG Set 2 called?',
+        answer:
+          'Set 2 is called Escalation and is being developed around Flux. No release date or complete card list is announced in the August update.',
+      },
+      {
+        question: 'Does Chrono CCG have a tutorial now?',
+        answer:
+          'Learning improvements are underway, including tooltips and hover inspection. A proper Tutorial and a game log are still in development.',
+      },
+      {
+        question: 'What decks are needed for the August tournament?',
+        answer:
+          'The official format says to bring two decks and win with both in Swiss best-of-three rounds without bans.',
       },
     ],
   },
@@ -1187,6 +1296,7 @@ export const relatedRouteLabels: Record<string, string> = {
   '/guides/beginner-guide': 'Beginner Guide',
   '/guides/beta-update-rewards-guide': 'Beta Update',
   '/guides/beta-season-2-trials-guide': 'Beta Season 2 Trials',
+  '/guides/beta-season-3-mobile-set-2-guide': 'Season 3 Roadmap',
   '/guides/card-list-and-deck-builder-guide': 'Card List Guide',
   '/guides/codes-redeem-guide': 'Redeem Codes',
   '/guides/diver-deckbuilding-guide': 'Diver Deckbuilding',

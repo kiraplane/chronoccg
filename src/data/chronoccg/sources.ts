@@ -1,6 +1,6 @@
 import type { DataSource } from './types';
 
-export const CHECKED_AT = '2026-08-11';
+export const CHECKED_AT = '2026-08-13';
 
 export const officialGameFacts = {
   name: 'Chrono CCG',
@@ -28,6 +28,14 @@ export const siteDescription =
   'Chrono CCG Wiki helps new open beta players learn rules, Divers, Timelines, syndicates, deck building, codes, card lists, and safe Steam or Epic access.';
 
 export const officialSources: DataSource[] = [
+  {
+    type: 'official',
+    label: 'August 2026 Dev Update',
+    url: 'https://playchrono.com/news/august-2026-dev-update',
+    checkedAt: CHECKED_AT,
+    confidence: 'high',
+    note: 'Official source for Beta Season 3 fixes, tutorial work, mobile status, Set 2: Escalation, and the August 29-30 tournament.',
+  },
   {
     type: 'official',
     label: 'Official Chrono CCG website',

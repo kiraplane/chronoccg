@@ -3,6 +3,20 @@ import type { GameUpdate } from './types';
 
 export const updates: GameUpdate[] = [
   {
+    slug: 'august-2026-dev-update',
+    title: 'August 2026 Dev Update - Season 3, Mobile, Tutorials, and Set 2',
+    publishedAt: '2026-08-07',
+    summary:
+      'The official August update confirms Beta Season 3 visual and combat fixes, a revised Deck Builder, tutorial and game-log work, internal iOS and Android builds that still need interface work, and Set 2: Escalation in development around the Flux theme. It also schedules an August 29-30 two-deck best-of-three tournament. Mobile and Set 2 do not have exact release dates, so players should use the current PC build while preparing two reliable tournament decks.',
+    source: {
+      type: 'official',
+      label: 'August 2026 Dev Update',
+      url: 'https://playchrono.com/news/august-2026-dev-update',
+      checkedAt: CHECKED_AT,
+      confidence: 'high',
+    },
+  },
+  {
     slug: 'july-2026-midseason-patch',
     title: 'Patch 0.7.11 - July 2026 Midseason Balance Update',
     publishedAt: '2026-07-16',
