@@ -29,14 +29,14 @@ export const activeCodes: GameCode[] = [
 export const watchCodes: GameCode[] = [
   {
     code: 'QUESTDOWN',
-    reward: 'Reported free Chrono CCG rewards',
-    status: 'watch',
+    reward: '300 Core Charges',
+    status: 'active',
     firstSeen: '2026-07-11',
     lastChecked: CHECKED_AT,
-    sourceLabel: 'YouTube Shorts code lead',
-    confidence: 'watch',
+    sourceLabel: 'r/ChronoCCG community confirmation',
+    confidence: 'medium',
     notes:
-      'A current YouTube Shorts snippet lists QUESTDOWN alongside ALLIE and BETALAUNCH. Keep it on watch until an official/community text source or in-game redemption confirms the reward.',
+      'A current r/ChronoCCG reminder lists QUESTDOWN alongside ALLIE and BETALAUNCH and reports a 300 Core Charges reward. Source-checked, not redeemed by this site.',
   },
   {
     code: 'creator stream drops',
